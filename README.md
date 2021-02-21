@@ -5,7 +5,7 @@ Scrapes courses sections from the course search page in Ellucian Banner (v8.4).
 # Install
 
 ```
-npm i  AhmadAlHallak/ellucian-banner-sections-scraper
+npm i AhmadAlHallak/ellucian-banner-sections-scraper
 ```
 
 ## Usage
@@ -22,21 +22,12 @@ Sample output =>
     "name": "ME308",
     "crdt": 4,
     "secs": [
-      {
-        "secNo": "02",
+      { 
+      "secNo": "02",
         "secCRN": "1317",
         "secBuilding": "ENG",
         "secInstructor": "Instructor 1", 
-        "sectionSlots": {
-          "T": [
-            660,
-            710
-          ],
-          "U": [
-            600,
-            710
-          ]
-        },
+        "sectionSlots": { "T": [660, 710], "U": [600, 710] },
         "secCourse": "ME308"
       }
     ]
@@ -50,16 +41,7 @@ Sample output =>
         "secCRN": "1246",
         "secBuilding": "ENG",
         "secInstructor": "Instructor 2",  
-        "sectionSlots": {
-          "T": [
-            840,
-            950
-          ],
-          "U": [
-            900,
-            950
-          ]
-        },
+        "sectionSlots": {"T": [840, 950], "U": [900, 950]},
         "secCourse": "ME201"
       },
       {
@@ -67,16 +49,7 @@ Sample output =>
         "secCRN": "1248",
         "secBuilding": "ENG",
         "secInstructor": "Instructor 3",  
-        "sectionSlots": {
-          "M": [
-            600,
-            710
-          ],
-          "T": [
-            780,
-            830
-          ]
-        },
+        "sectionSlots": {"M": [600, 710], "T": [780, 830]},
         "secCourse": "ME201"
       },
     ]
