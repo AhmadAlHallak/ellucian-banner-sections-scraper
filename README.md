@@ -96,3 +96,7 @@ Default: `[]`
 If you don't want specific CRNs to be scrapped.
 
 
+## Note:
+I made this script along with [weekly-scheduler](https://github.com/AhmadAlHallak/weekly-scheduler) to help me find schedules to register each new term in college. So both are best used in tandem.
+
+I made this script a long time ago, so review the code properly before using.
