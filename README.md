@@ -21,7 +21,7 @@ Sample output =>
   "ME308": {
     "name": "ME308",
     "crdt": 4,
-    "secs": [
+    "sections": [
       { 
       "secNo": "02",
         "secCRN": "1317",
@@ -35,7 +35,7 @@ Sample output =>
   "ME201": {
     "name": "ME201",
     "crdt": 3,
-    "secs": [
+    "sections": [
       {
         "secNo": "02",
         "secCRN": "1246",
