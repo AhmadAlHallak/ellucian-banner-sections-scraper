@@ -1,0 +1,16 @@
+{
+  "name": "ellucian-banner-sections-scraper",
+  "version": "1.1.0",
+  "description": "Scrapes courses sections from the course search page in Ellucian Banner (v8.4)",
+  "main": "sectionScrape.js",
+  "repository": "AhmadAlHallak/ellucian-banner-sections-scraper",
+  "author": "Ahmad AlHallak",
+  "license": "MIT",
+  "keywords": [
+      "college",
+      "scraper",
+      "ellucian",
+      "banner",
+    ],
+  "dependencies": {"jsdom": "^16.0.0"},
+}
