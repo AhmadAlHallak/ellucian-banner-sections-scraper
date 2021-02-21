@@ -12,8 +12,9 @@ npm i AhmadAlHallak/ellucian-banner-sections-scraper
 
 ```js
 const scrap = require('ellucian-banner-sections-scraper');
+// Sample input
 const coursesToRegister = ['ME308', 'ME201'];
-console.log(JSON.stringify(scrap('./index.html', coursesToRegister), null, 2));
+scrap('./index.html', coursesToRegister);
 ```
 Sample output =>
 ```js
