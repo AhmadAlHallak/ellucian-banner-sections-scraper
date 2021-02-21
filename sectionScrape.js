@@ -52,7 +52,7 @@ const Course = class {
 
 // Checks that the section is in line with the user options
 const sectionCheck = (options, secCourse, secDays, secTime, secLocation, secCRN) => {
-  const {coursesToRegister,offDays = [], dailyStart = 0, dailyEnd = 1440, excludedCRNs = [], offDays = [] } = options;
+  const {coursesToRegister, dailyStart = 0, dailyEnd = 1440, excludedCRNs = [], offDays = [] } = options;
   if (
     (coursesToRegister && !coursesToRegister.includes(secCourse)) ||
     offDays.includes(secDays) ||
