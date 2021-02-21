@@ -10,7 +10,7 @@
       "college",
       "scraper",
       "ellucian",
-      "banner",
+      "banner"
     ],
-  "dependencies": {"jsdom": "^16.0.0"},
+  "dependencies": {"jsdom": "^16.0.0"}
 }
