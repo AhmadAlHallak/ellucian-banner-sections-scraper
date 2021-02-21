@@ -67,12 +67,12 @@ const sectionCheck = (options, secCourse, secDays, secTime, secLocation, secCRN)
 
 // Grabs the relevant data from the table and puts it in an easy to read and manipulate object.
 // Also preforms culling on the data using sectionCheck()
-module.exports = (htmlPath, options = {}) => {
+module.exports = (htmlPath, coursesToRegister, options = {}) => {
   const html = readFileSync(htmlPath).toString();
   const dom = new JSDOM(html);
   const table = dom.window.document.getElementsByClassName('datadisplaytable')[0];
   const courses = {};
-  const { coursesToRegister } = options;
+  options.coursesToRegister = coursesToRegister;
   coursesToRegister.forEach((course) => {
     courses[course] = new Course(course);
   });
