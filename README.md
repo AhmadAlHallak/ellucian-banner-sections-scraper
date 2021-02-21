@@ -1,6 +1,6 @@
 # ellucian-banner-sections-scraper
 
-Scrapes courses sections from the course search page in Ellucian Banner (v8.4)
+Scrapes courses sections from the course search page in Ellucian Banner (v8.4).
 
 # Install
 
@@ -10,12 +10,79 @@ npm i  AhmadAlHallak/ellucian-banner-sections-scraper
 
 ## Usage
 
-```
+```js
 const scrap = require('ellucian-banner-sections-scraper');
-const coursesToRegister = ['ME308', 'ME308Lab'];
+const coursesToRegister = ['ME308', 'ME201'];
 console.log(JSON.stringify(scrap('./index.html', coursesToRegister), null, 2));
 ```
-
+Sample output =>
+```js
+{
+  "ME308": {
+    "name": "ME308",
+    "crdt": 4,
+    "secs": [
+      {
+        "secNo": "02",
+        "secCRN": "1317",
+        "secBuilding": "ENG",
+        "secInstructor": "Instructor 1", 
+        "sectionSlots": {
+          "T": [
+            660,
+            710
+          ],
+          "U": [
+            600,
+            710
+          ]
+        },
+        "secCourse": "ME308"
+      }
+    ]
+  },
+  "ME201": {
+    "name": "ME201",
+    "crdt": 3,
+    "secs": [
+      {
+        "secNo": "02",
+        "secCRN": "1246",
+        "secBuilding": "ENG",
+        "secInstructor": "Instructor 2",  
+        "sectionSlots": {
+          "T": [
+            840,
+            950
+          ],
+          "U": [
+            900,
+            950
+          ]
+        },
+        "secCourse": "ME201"
+      },
+      {
+        "secNo": "03",
+        "secCRN": "1248",
+        "secBuilding": "ENG",
+        "secInstructor": "Instructor 3",  
+        "sectionSlots": {
+          "M": [
+            600,
+            710
+          ],
+          "T": [
+            780,
+            830
+          ]
+        },
+        "secCourse": "ME201"
+      },
+    ]
+  }
+}
+```
 ## API
 
 ### `scrap(htmlPath,coursesToRegister [,options])`
