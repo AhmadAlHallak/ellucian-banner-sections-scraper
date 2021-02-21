@@ -6,7 +6,7 @@ const { JSDOM } = require('jsdom'); // can be coded out if running in browser en
   const options = {
     coursesToRegister: ['ME309', 'ME308', 'ME308Lab', 'EE306', 'EE306Lab', 'ME315', 'ME316'], // Add lab suffix if a course is made up of two separate sections (lecture with full credit, lab wiht 0 credit)
     dailyStart: 0, // In minutes. When you want your school day to start.
-    dailyEnd: 1320, // In minutes. When you want your school day to end.
+    dailyEnd: 1440, // In minutes. When you want your school day to end.
     excludedCRNs: [], // If you don't want a specific CRN to be scrapped.
     offDays: [ 'M'], // If you don't want to include any section that falls on a certain day
   };
@@ -52,12 +52,13 @@ const Course = class {
 
 // Checks that the section is in line with the user options
 const sectionCheck = (options, secCourse, secDays, secTime, secLocation, secCRN) => {
+  const {coursesToRegister,offDays = [], dailyStart = 0, dailyEnd = 1440, excludedCRNs = [], offDays = [] } = options;
   if (
-    !options.coursesToRegister.includes(secCourse) ||
-    options.offDays.includes(secDays) ||
-    secTime[0] < options.dailyStart ||
-    secTime[1] > options.dailyEnd ||
-    options.excludedCRNs.includes(secCRN)
+    (coursesToRegister && !coursesToRegister.includes(secCourse)) ||
+    offDays.includes(secDays) ||
+    secTime[0] < dailyStart ||
+    secTime[1] > dailyEnd ||
+    excludedCRNs.includes(secCRN)
   )
     return false;
 
@@ -66,7 +67,7 @@ const sectionCheck = (options, secCourse, secDays, secTime, secLocation, secCRN)
 
 // Grabs the relevant data from the table and puts it in an easy to read and manipulate object.
 // Also preforms culling on the data using sectionCheck()
-module.exports = (htmlPath, options) => {
+module.exports = (htmlPath, options = {}) => {
   const html = readFileSync(htmlPath).toString();
   const dom = new JSDOM(html);
   const table = dom.window.document.getElementsByClassName('datadisplaytable')[0];
