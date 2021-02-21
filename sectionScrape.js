@@ -34,11 +34,11 @@ const Course = class {
   constructor(name, crdt) {
     this.name = name;
     this.crdt = crdt;
-    this.secs = [];
+    this.sections = [];
   }
 
   addSection(secNo, secCRN, secBuilding, secInstructor, sectionSlots, secCourse) {
-    this.secs.push({
+    this.sections.push({
       secNo,
       secCRN,
       secBuilding,
