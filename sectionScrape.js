@@ -110,16 +110,7 @@ module.exports = (htmlPath, coursesToRegister, options = {}) => {
         rowLocation = row.children[15].textContent.replace(/ .*/, '');
 
         if (
-          sectionCheck(
-            options,
-            rowCourse,
-            /* Temp for online */ rowCrdt === '0.000' ? rowDays : 'asda',
-            rowTime,
-            rowLocation,
-            rowCRN,
-            rowSecNo,
-            rowCRN
-          )
+          sectionCheck(options, rowCourse, rowDays, rowTime, rowLocation, rowCRN)
         ) {
           [...rowDays].forEach((day) => {
             sectionSlots[day] = rowTime;
@@ -130,7 +121,7 @@ module.exports = (htmlPath, coursesToRegister, options = {}) => {
         rowTime = row.children[9].textContent;
         rowTime = parseTime(rowTime);
 
-        if (sectionCheck(options, rowCourse, rowCrdt === '0.000' ? rowDays : 'asda', rowTime, rowLocation, rowCRN)) {
+        if (sectionCheck(options, rowCourse, rowDays, rowTime, rowLocation, rowCRN)) {
           [...rowDays].forEach((day) => {
             sectionSlots[day] = rowTime;
           });
