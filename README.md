@@ -66,7 +66,7 @@ Type: `string`
 
 ### `coursesToRegister`
 
-Type: `array<string>`
+Type: `Array<string>`
 
 ### `options?`
 Type: `object`
